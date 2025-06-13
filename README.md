@@ -1,14 +1,46 @@
-# Mapbox Turn-by-Turn Navigation App
+# Intelligent Car Driving Assistant (ICDA)
 
-A Flutter application that provides turn-by-turn navigation using Mapbox services.
+An advanced Flutter application that combines AI-powered navigation with intelligent safety features to provide a comprehensive driving assistance system.
 
-## Features
+## 🚗 Overview
 
-- Interactive map with current location tracking
-- Search for destinations
-- Turn-by-turn navigation with real-time instructions
-- Route visualization
-- ETA and distance calculation
+ICDA is more than just a navigation app - it's your intelligent driving companion that provides:
+- **Smart Navigation**: Turn-by-turn navigation with AI-powered safety assistance
+- **AI Vision Assistant**: Real-time object detection through dashcam integration
+- **Safety Intelligence**: Context-aware driving tips and warnings
+- **Weather Integration**: Real-time weather information for route planning
+
+## ✨ Key Features
+
+### 🧭 Smart Navigation
+- **Interactive Mapbox Integration**: High-quality maps with real-time location tracking
+- **Intelligent Route Planning**: Optimized routes with multiple waypoint support
+- **Turn Signal Indicators**: Visual reminders for upcoming turns (500m advance warning)
+- **Voice Navigation**: Clear turn-by-turn voice instructions
+- **Speed Monitoring**: Real-time speed tracking with limit warnings
+- **Simulation Mode**: Test navigation routes without actual driving
+
+### 🤖 AI Vision Assistant
+- **Real-time Object Detection**: YOLOv8-powered detection of vehicles, pedestrians, and road signs
+- **Dashcam Integration**: Connect external cameras for enhanced safety monitoring
+- **Smart Alerts**: Context-aware warnings based on detected objects
+
+### 🛡️ Safety Intelligence
+- **Context-Aware Safety Tips**: Driving tips based on current navigation context
+- **Time-Based Reminders**: Automatic headlight reminders during dawn/dusk/night
+- **Speed Limit Warnings**: Visual and audio alerts for speeding
+- **Emergency Situations**: Priority safety tips for critical driving scenarios
+
+### 🌤️ Weather Integration
+- **Real-time Weather Data**: Current conditions along your route
+- **Weather-Aware Planning**: Route adjustments based on weather conditions
+- **Visibility Warnings**: Alerts for poor weather driving conditions
+
+### 👤 User Experience
+- **Firebase Authentication**: Secure user accounts with Google Sign-In
+- **Personalized Profiles**: Save preferences and driving history
+- **Offline Capabilities**: Core navigation features work without internet
+- **Multi-platform Support**: Android and iOS compatibility
 
 ## Setup Instructions
 
@@ -25,6 +57,8 @@ A Flutter application that provides turn-by-turn navigation using Mapbox service
    ```
    MAPBOX_ACCESS_TOKEN=your_mapbox_access_token_here
    MAPBOX_DOWNLOADS_TOKEN=your_mapbox_downloads_token_here
+   GOOGLE_API_KEY=your_google_api_key_here
+   OPENWEATHER_API_KEY=your_openweather_api_key_here
    ```
 
 ### 3. Firebase Setup
