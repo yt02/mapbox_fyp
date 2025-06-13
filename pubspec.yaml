@@ -1,0 +1,53 @@
+name: mapbox_fyp
+description: "Intelligent Car Driving Assistant (ICDA) - AI-powered navigation and safety system."
+publish_to: 'none'
+version: 0.1.0
+
+environment:
+  sdk: ^3.8.0
+
+dependencies:
+  flutter:
+    sdk: flutter
+  mapbox_maps_flutter: ^2.8.0
+  dio: ^5.3.2
+  flutter_dotenv: ^5.1.0
+  location: ^5.0.3
+  flutter_polyline_points: ^1.0.0
+  geolocator: ^10.1.0
+  google_maps_flutter: ^2.5.0
+  google_places_flutter: ^2.0.6
+  http: ^0.13.6
+  flutter_tts: ^3.7.0
+  audioplayers: ^6.4.0
+  firebase_core: ^3.13.1
+  firebase_auth: ^5.5.4
+  google_sign_in: ^6.3.0
+  shared_preferences: ^2.5.3
+  flutter_native_splash: ^2.4.6
+  flutter_svg: ^2.0.9
+  cloud_firestore: ^5.6.9
+  cupertino_icons: ^1.0.8
+  image: ^4.5.4
+  flutter_onnxruntime: ^1.4.0
+  camera: ^0.10.5+9
+  permission_handler: ^11.1.0
+  file_picker: ^8.0.0+1
+  video_player: ^2.8.2
+  path_provider: ^2.1.2
+  video_thumbnail: ^0.5.3
+
+
+dev_dependencies:
+  flutter_test:
+    sdk: flutter
+  flutter_lints: ^5.0.0
+
+flutter:
+  uses-material-design: true
+  assets:
+    - assets/config.properties
+    - assets/sounds/
+    - assets/images/
+    - assets/models/coco-labels.json
+    - assets/models/yolov8n.onnx
