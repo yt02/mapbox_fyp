@@ -42,34 +42,69 @@ ICDA is more than just a navigation app - it's your intelligent driving companio
 - **Offline Capabilities**: Core navigation features work without internet
 - **Multi-platform Support**: Android and iOS compatibility
 
-## Setup Instructions
+## 🛠️ Setup Instructions
 
-### 1. Get Mapbox Access Tokens
+### Prerequisites
+- Flutter SDK (3.8.0 or higher)
+- Android Studio / Xcode for mobile development
+- Firebase account
+- Mapbox account
+- Google Cloud Platform account (for Places API)
 
+### 1. Clone the Repository
+```bash
+git clone <your-repository-url>
+cd mapbox_fyp
+```
+
+### 2. Install Dependencies
+```bash
+flutter pub get
+```
+
+### 3. Configure API Keys
+
+#### Mapbox Setup
 1. Create a Mapbox account at [mapbox.com](https://www.mapbox.com/)
-2. Navigate to your account dashboard and get your access token
-3. For some features, you might also need a Mapbox Downloads token
-
-### 2. Configure Environment Variables
-
-1. Open the `assets/config.properties` file
-2. Replace the placeholder values with your actual Mapbox tokens:
-   ```
+2. Get your access token from the account dashboard
+3. Open `assets/config.properties` and add your tokens:
+   ```properties
    MAPBOX_ACCESS_TOKEN=your_mapbox_access_token_here
    MAPBOX_DOWNLOADS_TOKEN=your_mapbox_downloads_token_here
-   GOOGLE_API_KEY=your_google_api_key_here
+   GOOGLE_API_KEY=your_google_places_api_key_here
    OPENWEATHER_API_KEY=your_openweather_api_key_here
    ```
 
-### 3. Firebase Setup
+#### Google Places API Setup
+1. Go to [Google Cloud Console](https://console.cloud.google.com/)
+2. Enable the Places API
+3. Create an API key and add it to your config file
+
+#### OpenWeather API Setup
+1. Sign up at [OpenWeatherMap](https://openweathermap.org/api)
+2. Get your free API key
+3. Add it to your config file
+
+### 4. Firebase Setup
+
+#### Create Firebase Project
+1. Go to [Firebase Console](https://console.firebase.google.com/)
+2. Create a new project
+3. Enable Authentication and Firestore Database
+
+#### Configure Firebase for Flutter
+1. Install Firebase CLI: `npm install -g firebase-tools`
+2. Login to Firebase: `firebase login`
+3. Configure FlutterFire: `dart pub global activate flutterfire_cli`
+4. Run: `flutterfire configure`
+
+#### Enable Authentication Methods
+1. In Firebase Console, go to Authentication > Sign-in method
+2. Enable Email/Password and Google sign-in
+3. For Google sign-in, add your app's SHA-1 fingerprint
 
 #### Firestore Security Rules
-
-You need to set up Firestore security rules to allow authenticated users to read and write their own data. In your Firebase Console:
-
-1. Go to Firestore Database
-2. Click on "Rules" tab
-3. Replace the default rules with:
+Set up Firestore security rules in Firebase Console:
 
 ```javascript
 rules_version = '2';
@@ -89,59 +124,94 @@ service cloud.firestore {
 }
 ```
 
-4. Click "Publish" to apply the rules
-
-### 4. Platform-Specific Setup
+### 5. Platform-Specific Setup
 
 #### Android
-
-1. Add the following permissions to your `android/app/src/main/AndroidManifest.xml` file:
+1. Add permissions to `android/app/src/main/AndroidManifest.xml`:
    ```xml
    <uses-permission android:name="android.permission.INTERNET" />
    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+   <uses-permission android:name="android.permission.CAMERA" />
+   <uses-permission android:name="android.permission.RECORD_AUDIO" />
+   <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
    ```
 
-2. Set the minimum SDK version in `android/app/build.gradle`:
+2. Set minimum SDK version in `android/app/build.gradle`:
    ```gradle
-   minSdkVersion 20
+   minSdkVersion 21
+   compileSdkVersion 34
    ```
 
 #### iOS
-
-1. Add the following to your `ios/Runner/Info.plist`:
+1. Add permissions to `ios/Runner/Info.plist`:
    ```xml
    <key>NSLocationWhenInUseUsageDescription</key>
-   <string>This app needs access to location when open.</string>
+   <string>This app needs location access for navigation.</string>
+   <key>NSCameraUsageDescription</key>
+   <string>This app needs camera access for AI vision features.</string>
+   <key>NSMicrophoneUsageDescription</key>
+   <string>This app needs microphone access for voice commands.</string>
    <key>io.flutter.embedded_views_preview</key>
    <true/>
    ```
 
-2. Set the minimum iOS version in `ios/Podfile`:
+2. Set minimum iOS version in `ios/Podfile`:
    ```ruby
-   platform :ios, '11.0'
+   platform :ios, '12.0'
    ```
 
-## Running the App
+## 🏃‍♂️ Running the App
 
-1. Install dependencies:
-   ```bash
-   flutter pub get
-   ```
+### Development Mode
+```bash
+flutter run
+```
 
-2. Run the app:
-   ```bash
-   flutter run
-   ```
+### Release Mode
+```bash
+flutter run --release
+```
 
-## Usage
+### Build APK (Android)
+```bash
+flutter build apk --release
+```
 
-1. The app will open with a map centered on your current location (if permission is granted)
-2. Tap the search button (floating action button) to search for a destination
-3. Select a destination from the search results
-4. The app will calculate the route and start turn-by-turn navigation
-5. Follow the instructions displayed at the top of the screen
-6. You can tap the close button to end navigation at any time
+### Build IPA (iOS)
+```bash
+flutter build ios --release
+```
+
+## 📱 How to Use
+
+### Getting Started
+1. **Launch the App**: Open ICDA and sign in with your Google account
+2. **Grant Permissions**: Allow location, camera, and microphone access
+3. **Choose Mode**: Select "Smart Navigation" or "AI Vision Assistant"
+
+### Smart Navigation Mode
+1. **Search Destination**: Tap the search icon to find your destination
+2. **Plan Route**: The app calculates the optimal route with real-time traffic
+3. **Start Navigation**: Choose "Start" for real navigation or "Simulate" for testing
+4. **Follow Instructions**:
+   - Turn-by-turn voice guidance
+   - Visual turn signal indicators (500m before turns)
+   - Real-time speed monitoring
+   - Weather-aware route adjustments
+
+### AI Vision Assistant Mode
+1. **Connect Dashcam**: Follow the connection wizard to link your camera
+2. **Real-time Detection**: The AI identifies vehicles, pedestrians, and road signs
+3. **Smart Alerts**: Receive context-aware safety warnings
+4. **Recording**: Optionally record and analyze driving sessions
+
+### Key Features in Action
+- **Turn Signal Reminders**: 🔄 Visual indicators appear 500m before turns
+- **Speed Warnings**: ⚠️ Alerts when exceeding speed limits
+- **Weather Integration**: 🌤️ Real-time weather data affects route planning
+- **Safety Tips**: 💡 Context-aware driving advice based on road conditions
+- **Night Mode**: 🌙 Automatic headlight reminders during low-light conditions
 
 ## Dependencies
 
