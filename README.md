@@ -213,11 +213,155 @@ flutter build ios --release
 - **Safety Tips**: 💡 Context-aware driving advice based on road conditions
 - **Night Mode**: 🌙 Automatic headlight reminders during low-light conditions
 
-## Dependencies
+## 🏗️ Architecture & Dependencies
 
-- `mapbox_gl`: For map rendering and interaction
-- `dio`: For HTTP requests
-- `flutter_dotenv`: For environment variables management
-- `location`: For location services
-- `flutter_polyline_points`: For polyline decoding
-- `geolocator`: For geolocation services
+### Core Technologies
+- **Flutter**: Cross-platform mobile development framework
+- **Firebase**: Backend services (Authentication, Firestore)
+- **Mapbox**: High-quality maps and navigation services
+- **YOLOv8**: AI object detection model
+- **ONNX Runtime**: AI model inference engine
+
+### Key Dependencies
+
+#### Navigation & Maps
+- `mapbox_maps_flutter`: Advanced mapping and navigation
+- `geolocator`: Precise location services
+- `google_places_flutter`: Place search and autocomplete
+
+#### AI & Computer Vision
+- `flutter_onnxruntime`: AI model inference
+- `camera`: Camera integration for dashcam features
+- `image`: Image processing utilities
+
+#### Audio & Voice
+- `flutter_tts`: Text-to-speech for navigation instructions
+- `audioplayers`: Sound effects and alerts
+
+#### Backend & Authentication
+- `firebase_core`: Firebase SDK core
+- `firebase_auth`: User authentication
+- `cloud_firestore`: Cloud database
+- `google_sign_in`: Google authentication
+
+#### Networking & Data
+- `dio`: HTTP client for API requests
+- `http`: Additional HTTP utilities
+- `flutter_dotenv`: Environment configuration
+
+#### UI & User Experience
+- `flutter_svg`: SVG graphics support
+- `video_player`: Video playback capabilities
+- `permission_handler`: Runtime permissions management
+
+## 🔧 Technical Features
+
+### AI Object Detection
+- **Model**: YOLOv8n (optimized for mobile)
+- **Classes**: 80 COCO dataset classes including vehicles, pedestrians, traffic signs
+- **Performance**: Real-time inference on mobile devices
+- **Accuracy**: High precision object detection with bounding boxes
+
+### Navigation Intelligence
+- **Route Optimization**: Multi-factor route calculation
+- **Real-time Updates**: Dynamic route adjustments
+- **Voice Guidance**: Natural language turn instructions
+- **Context Awareness**: Situation-specific safety tips
+
+### Safety Systems
+- **Speed Monitoring**: GPS-based speed tracking
+- **Weather Integration**: OpenWeatherMap API integration
+- **Time-based Alerts**: Automatic headlight reminders
+- **Emergency Features**: Priority safety notifications
+
+## 🐛 Troubleshooting
+
+### Common Issues
+
+#### Map Not Loading
+- Verify Mapbox access token in `assets/config.properties`
+- Check internet connection
+- Ensure location permissions are granted
+
+#### Navigation Not Starting
+- Confirm GPS is enabled
+- Check location permissions
+- Verify destination is reachable
+
+#### AI Detection Not Working
+- Ensure camera permissions are granted
+- Check if device supports ONNX Runtime
+- Verify model files are in `assets/models/`
+
+#### Voice Instructions Silent
+- Check device volume settings
+- Verify TTS is enabled in app settings
+- Test device text-to-speech functionality
+
+### Performance Optimization
+- Close other apps to free memory
+- Ensure device has sufficient storage
+- Use release build for better performance
+- Consider device hardware limitations
+
+## 🤝 Contributing
+
+We welcome contributions! Please follow these steps:
+
+1. **Fork the Repository**
+   ```bash
+   git fork <repository-url>
+   ```
+
+2. **Create Feature Branch**
+   ```bash
+   git checkout -b feature/your-feature-name
+   ```
+
+3. **Make Changes**
+   - Follow Flutter/Dart style guidelines
+   - Add tests for new features
+   - Update documentation as needed
+
+4. **Test Your Changes**
+   ```bash
+   flutter test
+   flutter analyze
+   ```
+
+5. **Submit Pull Request**
+   - Provide clear description of changes
+   - Include screenshots for UI changes
+   - Reference any related issues
+
+### Development Guidelines
+- Use meaningful commit messages
+- Follow existing code structure
+- Add comments for complex logic
+- Test on both Android and iOS
+- Ensure accessibility compliance
+
+## 📄 License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
+## 🙏 Acknowledgments
+
+- **Mapbox** for excellent mapping services
+- **Firebase** for robust backend infrastructure
+- **YOLOv8** team for the object detection model
+- **Flutter** team for the amazing framework
+- **OpenWeatherMap** for weather data services
+
+## 📞 Support
+
+For support and questions:
+- Create an issue on GitHub
+- Check the [Wiki](../../wiki) for detailed documentation
+- Review existing issues for solutions
+
+---
+
+**Made with ❤️ for safer driving**
+
+*ICDA - Your Intelligent Driving Companion*
