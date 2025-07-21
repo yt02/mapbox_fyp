@@ -2,6 +2,10 @@
 
 An advanced Flutter application that combines AI-powered navigation with intelligent safety features to provide a comprehensive driving assistance system.
 
+
+https://github.com/user-attachments/assets/b7da483b-c09f-4c42-9c81-7706d541d40d
+
+
 ## 🚗 Overview
 
 ICDA is more than just a navigation app - it's your intelligent driving companion that provides:
