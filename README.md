@@ -53,7 +53,7 @@ ICDA is more than just a navigation app - it's your intelligent driving companio
 
 ### 1. Clone the Repository
 ```bash
-git clone <your-repository-url>
+git clone https://github.com/yt02/mapbox_fyp.git
 cd mapbox_fyp
 ```
 
@@ -304,61 +304,6 @@ flutter build ios --release
 - Use release build for better performance
 - Consider device hardware limitations
 
-## 🤝 Contributing
-
-We welcome contributions! Please follow these steps:
-
-1. **Fork the Repository**
-   ```bash
-   git fork <repository-url>
-   ```
-
-2. **Create Feature Branch**
-   ```bash
-   git checkout -b feature/your-feature-name
-   ```
-
-3. **Make Changes**
-   - Follow Flutter/Dart style guidelines
-   - Add tests for new features
-   - Update documentation as needed
-
-4. **Test Your Changes**
-   ```bash
-   flutter test
-   flutter analyze
-   ```
-
-5. **Submit Pull Request**
-   - Provide clear description of changes
-   - Include screenshots for UI changes
-   - Reference any related issues
-
-### Development Guidelines
-- Use meaningful commit messages
-- Follow existing code structure
-- Add comments for complex logic
-- Test on both Android and iOS
-- Ensure accessibility compliance
-
-## 📄 License
-
-This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 🙏 Acknowledgments
-
-- **Mapbox** for excellent mapping services
-- **Firebase** for robust backend infrastructure
-- **YOLOv8** team for the object detection model
-- **Flutter** team for the amazing framework
-- **OpenWeatherMap** for weather data services
-
-## 📞 Support
-
-For support and questions:
-- Create an issue on GitHub
-- Check the [Wiki](../../wiki) for detailed documentation
-- Review existing issues for solutions
 
 ---
 
